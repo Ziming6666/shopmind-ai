@@ -4,7 +4,7 @@
 
 ## 在线体验
 
-[https://你的railway域名.up.railway.app](https://你的railway域名.up.railway.app)
+[https://shopmind-ai-production.up.railway.app](https://shopmind-ai-production.up.railway.app)
 
 ## 项目背景
 
