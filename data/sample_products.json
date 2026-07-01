@@ -1,0 +1,257 @@
+[
+  {
+    "id": "P001",
+    "name": "联想小新Pro 14",
+    "category": "笔记本电脑",
+    "price": 4999,
+    "brand": "联想",
+    "rating": 4.7,
+    "sales": 15200,
+    "tags": [
+      "轻薄本",
+      "学生",
+      "办公",
+      "高性能"
+    ],
+    "description": "联想小新Pro 14 2024款，i5-13500H/16GB/512GB，14英寸2.8K 120Hz屏，1.3kg，12小时续航。"
+  },
+  {
+    "id": "P002",
+    "name": "华为MateBook 14",
+    "category": "笔记本电脑",
+    "price": 5699,
+    "brand": "华为",
+    "rating": 4.8,
+    "sales": 9800,
+    "tags": [
+      "轻薄本",
+      "商务",
+      "触控屏",
+      "华为生态"
+    ],
+    "description": "华为MateBook 14 2024款，i5-1340P/16GB/512GB，14英寸2K触控屏，支持华为超级终端多设备协同。"
+  },
+  {
+    "id": "P003",
+    "name": "Apple MacBook Air M3",
+    "category": "笔记本电脑",
+    "price": 8999,
+    "brand": "Apple",
+    "rating": 4.9,
+    "sales": 23100,
+    "tags": [
+      "轻薄本",
+      "苹果生态",
+      "长续航",
+      "创意设计"
+    ],
+    "description": "MacBook Air M3芯片版，8GB/256GB，13.6英寸Liquid Retina屏，1.24kg，18小时续航，无风扇静音设计。"
+  },
+  {
+    "id": "P004",
+    "name": "小米RedmiBook 16",
+    "category": "笔记本电脑",
+    "price": 3999,
+    "brand": "小米",
+    "rating": 4.5,
+    "sales": 32100,
+    "tags": [
+      "性价比",
+      "大屏",
+      "学生",
+      "办公"
+    ],
+    "description": "小米RedmiBook 16，i5-12450H/16GB/512GB，16英寸1080P大屏，性价比之王。"
+  },
+  {
+    "id": "P005",
+    "name": "戴尔XPS 15",
+    "category": "笔记本电脑",
+    "price": 12999,
+    "brand": "戴尔",
+    "rating": 4.6,
+    "sales": 6700,
+    "tags": [
+      "高端",
+      "创作",
+      "大屏",
+      "高性能"
+    ],
+    "description": "戴尔XPS 15，i7-13700H/32GB/1TB/RTX4060，15.6英寸3.5K OLED触控屏，专业创作旗舰本。"
+  },
+  {
+    "id": "P006",
+    "name": "iPhone 15 Pro Max",
+    "category": "手机",
+    "price": 9999,
+    "brand": "Apple",
+    "rating": 4.8,
+    "sales": 45200,
+    "tags": [
+      "旗舰",
+      "拍照",
+      "苹果生态",
+      "高性能"
+    ],
+    "description": "iPhone 15 Pro Max，A17 Pro芯片/8GB/256GB，6.7英寸OLED 120Hz，钛金属机身，USB-C接口。"
+  },
+  {
+    "id": "P007",
+    "name": "iPhone 15",
+    "category": "手机",
+    "price": 5999,
+    "brand": "Apple",
+    "rating": 4.6,
+    "sales": 68500,
+    "tags": [
+      "苹果生态",
+      "拍照",
+      "性价比"
+    ],
+    "description": "iPhone 15，A16芯片/6GB/128GB，6.1英寸OLED，4800万像素主摄，USB-C接口，灵动岛。"
+  },
+  {
+    "id": "P008",
+    "name": "华为P60 Pro",
+    "category": "手机",
+    "price": 6988,
+    "brand": "华为",
+    "rating": 4.7,
+    "sales": 18700,
+    "tags": [
+      "旗舰",
+      "拍照",
+      "国产",
+      "长续航"
+    ],
+    "description": "华为P60 Pro，骁龙8+ Gen1/8GB/256GB，XMAGE影像系统，北斗卫星消息，昆仑玻璃。"
+  },
+  {
+    "id": "P009",
+    "name": "小米14 Ultra",
+    "category": "手机",
+    "price": 5999,
+    "brand": "小米",
+    "rating": 4.6,
+    "sales": 26500,
+    "tags": [
+      "旗舰",
+      "拍照",
+      "性价比",
+      "快充"
+    ],
+    "description": "小米14 Ultra，骁龙8 Gen3/12GB/256GB，徕卡光学四摄，5300mAh+90W快充，IP68。"
+  },
+  {
+    "id": "P010",
+    "name": "Redmi Note 13 Pro+",
+    "category": "手机",
+    "price": 1899,
+    "brand": "小米",
+    "rating": 4.5,
+    "sales": 58200,
+    "tags": [
+      "中端",
+      "拍照",
+      "快充",
+      "性价比"
+    ],
+    "description": "Redmi Note 13 Pro+，天玑7200-Ultra/12GB/256GB，2亿像素主摄，120W快充19分钟充满，IP68防水。"
+  },
+  {
+    "id": "P011",
+    "name": "Sony WH-1000XM5",
+    "category": "耳机",
+    "price": 2499,
+    "brand": "Sony",
+    "rating": 4.9,
+    "sales": 38500,
+    "tags": [
+      "降噪",
+      "HiFi",
+      "头戴式",
+      "商务"
+    ],
+    "description": "Sony WH-1000XM5，AI自适应降噪，30小时续航，3分钟快充可用3小时，LDAC高解析音频。"
+  },
+  {
+    "id": "P012",
+    "name": "AirPods Pro 2",
+    "category": "耳机",
+    "price": 1899,
+    "brand": "Apple",
+    "rating": 4.8,
+    "sales": 52100,
+    "tags": [
+      "降噪",
+      "苹果生态",
+      "便携",
+      "TWS"
+    ],
+    "description": "AirPods Pro 2，H2芯片，自适应降噪，空间音频，6小时续航，MagSafe充电盒。"
+  },
+  {
+    "id": "P013",
+    "name": "华为FreeBuds Pro 3",
+    "category": "耳机",
+    "price": 1499,
+    "brand": "华为",
+    "rating": 4.7,
+    "sales": 28600,
+    "tags": [
+      "降噪",
+      "华为生态",
+      "便携",
+      "TWS"
+    ],
+    "description": "华为FreeBuds Pro 3，麒麟A2芯片，智慧动态降噪3.0，7小时续航，双设备连接。"
+  },
+  {
+    "id": "P014",
+    "name": "Apple iPad Air M2",
+    "category": "平板电脑",
+    "price": 4799,
+    "brand": "Apple",
+    "rating": 4.8,
+    "sales": 15800,
+    "tags": [
+      "平板",
+      "苹果生态",
+      "学习",
+      "创作"
+    ],
+    "description": "iPad Air M2芯片版，8GB/128GB，11英寸Liquid Retina屏，支持Apple Pencil Pro和妙控键盘。"
+  },
+  {
+    "id": "P015",
+    "name": "华为MatePad 11",
+    "category": "平板电脑",
+    "price": 2999,
+    "brand": "华为",
+    "rating": 4.6,
+    "sales": 22300,
+    "tags": [
+      "平板",
+      "鸿蒙生态",
+      "学习",
+      "办公"
+    ],
+    "description": "华为MatePad 11 2024款，骁龙8+ Gen1/8GB/128GB，11英寸2.5K 120Hz屏，鸿蒙多屏协同。"
+  },
+  {
+    "id": "P016",
+    "name": "Apple Watch Series 9",
+    "category": "智能手表",
+    "price": 3199,
+    "brand": "Apple",
+    "rating": 4.7,
+    "sales": 32100,
+    "tags": [
+      "手表",
+      "健康",
+      "运动",
+      "苹果生态"
+    ],
+    "description": "Apple Watch Series 9，S9芯片，全天候视网膜屏，ECG心电图，血氧监测，双指互点手势。"
+  }
+]

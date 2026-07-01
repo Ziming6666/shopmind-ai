@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMind AI - 电商智能助手</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-icon">🛍️</span>
+                <span class="logo-text">ShopMind <span class="logo-accent">AI</span></span>
+            </div>
+            <nav class="nav-tabs">
+                <button class="nav-tab active" data-tab="assistant">
+                    <span class="tab-icon">💬</span>
+                    <span class="tab-label">智能助手</span>
+                </button>
+                <button class="nav-tab" data-tab="products">
+                    <span class="tab-icon">📦</span>
+                    <span class="tab-label">商品浏览</span>
+                </button>
+                <button class="nav-tab" data-tab="analytics">
+                    <span class="tab-icon">📊</span>
+                    <span class="tab-label">运营看板</span>
+                </button>
+                <button class="nav-tab" data-tab="reviews">
+                    <span class="tab-icon">🔍</span>
+                    <span class="tab-label">评论分析</span>
+                </button>
+            </nav>
+            <div class="header-status">
+                <span class="status-dot"></span>
+                <span class="status-text">AI 在线</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- ========== TAB 1: 智能助手 ========== -->
+        <section class="tab-content active" id="tab-assistant">
+            <div class="chat-container">
+                <!-- 左侧: 对话区 -->
+                <div class="chat-main">
+                    <div class="chat-header">
+                        <h2><span class="header-emoji">🤖</span> 智能导购 &amp; 客服</h2>
+                        <p class="chat-subtitle">问我商品推荐、订单查询、售后问题，7×24小时在线</p>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message message-ai">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>👋 你好！我是 <strong>ShopMind AI</strong>，你的智能导购助手。</p>
+                                <p>我可以帮你：</p>
+                                <ul>
+                                    <li>🔍 <strong>找商品</strong> — 告诉我需求，精准推荐</li>
+                                    <li>💬 <strong>答问题</strong> — 规格、价格、库存实时查询</li>
+                                    <li>📦 <strong>查订单</strong> — 订单状态、物流追踪</li>
+                                    <li>🔄 <strong>办售后</strong> — 退换货流程指导</li>
+                                </ul>
+                                <p>试试问我 <em>"推荐一款5000以内的笔记本"</em> 吧！</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 快捷问题 -->
+                    <div class="quick-questions" id="quickQuestions">
+                        <button class="quick-btn" data-query="推荐一款适合学生用的笔记本电脑">🎒 学生笔记本推荐</button>
+                        <button class="quick-btn" data-query="怎么申请退货？">🔄 退货流程</button>
+                        <button class="quick-btn" data-query="你们有哪些手机在卖？">📱 在售手机</button>
+                        <button class="quick-btn" data-query="有什么降噪耳机推荐？">🎧 降噪耳机</button>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <div class="input-wrapper">
+                            <input
+                                type="text"
+                                id="chatInput"
+                                class="chat-input"
+                                placeholder="输入你的问题，例如：推荐一款办公笔记本..."
+                                autocomplete="off"
+                            />
+                            <button class="btn-send" id="btnSend" title="发送">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧: 提示面板 -->
+                <aside class="chat-sidebar">
+                    <div class="sidebar-card">
+                        <h3>💡 使用场景</h3>
+                        <ul class="scene-list">
+                            <li><span class="scene-icon">🛒</span> 商品导购推荐</li>
+                            <li><span class="scene-icon">📋</span> 规格参数查询</li>
+                            <li><span class="scene-icon">🚚</span> 物流状态追踪</li>
+                            <li><span class="scene-icon">🔄</span> 售后政策咨询</li>
+                            <li><span class="scene-icon">💰</span> 价格促销查询</li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-card">
+                        <h3>📌 当前推荐</h3>
+                        <div id="sidebarProduct" class="sidebar-product">
+                            <p class="loading-text">加载中...</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ========== TAB 2: 商品浏览 ========== -->
+        <section class="tab-content" id="tab-products">
+            <div class="products-header">
+                <h2><span class="header-emoji">📦</span> 商品库</h2>
+                <div class="product-filters">
+                    <select id="filterCategory" class="filter-select">
+                        <option value="">全部分类</option>
+                        <option value="笔记本电脑">笔记本电脑</option>
+                        <option value="手机">手机</option>
+                        <option value="耳机">耳机</option>
+                    </select>
+                    <select id="filterBrand" class="filter-select">
+                        <option value="">全部品牌</option>
+                    </select>
+                    <input type="text" id="productSearch" class="filter-input" placeholder="搜索商品名称..." />
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <div class="loading-spinner">加载中...</div>
+            </div>
+        </section>
+
+        <!-- ========== TAB 3: 运营看板 ========== -->
+        <section class="tab-content" id="tab-analytics">
+            <div class="analytics-header">
+                <h2><span class="header-emoji">📊</span> 运营数据看板</h2>
+            </div>
+            <div class="stats-cards" id="statsCards">
+                <div class="stat-card"><div class="stat-value">-</div><div class="stat-label">商品总数</div></div>
+                <div class="stat-card"><div class="stat-value">-</div><div class="stat-label">累计销量</div></div>
+                <div class="stat-card"><div class="stat-value">-</div><div class="stat-label">平均评分</div></div>
+                <div class="stat-card"><div class="stat-value">-</div><div class="stat-label">品牌数量</div></div>
+            </div>
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3>🏆 热销商品 TOP 5</h3>
+                    <div id="topSellers" class="top-list"></div>
+                </div>
+                <div class="analytics-card">
+                    <h3>📂 分类分布</h3>
+                    <div id="categoryChart" class="chart-area"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TAB 4: 评论分析（运营工具） ========== -->
+        <section class="tab-content" id="tab-reviews">
+            <div class="analytics-header" style="display:flex;justify-content:space-between;align-items:center;">
+                <h2><span class="header-emoji">🔍</span> 评论分析</h2>
+                <span style="font-size:12px;background:#fef3c7;color:#92400e;padding:4px 12px;border-radius:10px;">🧑‍💼 运营人员专用</span>
+            </div>
+
+            <div style="background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:24px;margin-bottom:20px;">
+                <h3 style="font-size:15px;margin-bottom:12px;">📝 输入待分析评论</h3>
+                <p style="font-size:13px;color:var(--gray-500);margin-bottom:12px;">输入用户评论数据，Dify Workflow 将自动完成清洗→情感分析→关键词提取→报告生成</p>
+                <textarea id="reviewInput" style="width:100%;min-height:160px;padding:12px;border:1px solid var(--gray-200);border-radius:8px;font-size:13px;font-family:monospace;resize:vertical;outline:none;" placeholder='请粘贴评论JSON数据，格式示例：
+[
+  {"id":"R001","content":"笔记本质量很好，运行速度快！","rating":5},
+  {"id":"R002","content":"包装有破损，物流太慢了","rating":3},
+  {"id":"R003","content":"收到就坏了，客服态度差","rating":1}
+]'></textarea>
+                <div style="display:flex;gap:12px;margin-top:12px;align-items:center;">
+                    <button id="btnAnalyze" style="padding:10px 24px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">🚀 开始分析</button>
+                    <button id="btnSampleReviews" style="padding:10px 24px;background:var(--gray-100);color:var(--gray-700);border:1px solid var(--gray-200);border-radius:8px;font-size:14px;cursor:pointer;">📋 加载示例数据</button>
+                    <span id="analyzeStatus" style="font-size:13px;color:var(--gray-400);"></span>
+                </div>
+            </div>
+
+            <!-- 分析结果展示 -->
+            <div id="reviewResult" style="display:none;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+                    <div style="background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:24px;">
+                        <h3 style="font-size:15px;margin-bottom:12px;">📊 数据概览</h3>
+                        <div id="reviewSummary" style="font-size:14px;color:var(--gray-600);line-height:2;"></div>
+                    </div>
+                    <div style="background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:24px;">
+                        <h3 style="font-size:15px;margin-bottom:12px;">🏷️ 关键词分析</h3>
+                        <div id="reviewKeywords" style="font-size:14px;color:var(--gray-600);line-height:2;"></div>
+                    </div>
+                </div>
+                <div style="background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:24px;">
+                    <h3 style="font-size:15px;margin-bottom:12px;">📄 分析报告</h3>
+                    <div id="reviewReport" style="font-size:14px;color:var(--gray-600);line-height:1.8;white-space:pre-wrap;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast 提示 -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
